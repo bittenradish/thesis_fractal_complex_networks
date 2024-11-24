@@ -8,8 +8,10 @@ LABEL version="1.0"
 
 LABEL description="docker image for Master thesis"
 
+RUN apt-get update && apt-get install -y \
+    software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt-get upgrade && apt-get install -y \
+RUN apt-get install -y \
     python3.12.4 \
     python3-pip \
     python3-graph-tool
