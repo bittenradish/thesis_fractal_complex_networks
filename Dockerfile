@@ -8,6 +8,7 @@ LABEL version="1.0"
 
 LABEL description="docker image for Master thesis"
 
+RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get upgrade && apt-get install -y \
     python3.12.4 \
     python3-pip \
