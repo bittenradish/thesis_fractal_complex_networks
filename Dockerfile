@@ -8,7 +8,10 @@ LABEL version="1.0"
 
 LABEL description="docker image for Master thesis"
 
-RUN apt-get update && apt-get install -y python3-graph-tool
+RUN apt-get update && apt-get install -y \
+    python3.12.4 \
+    python3-pip \
+    python3-graph-tool
 
 RUN pip install -r requirements.txt
 
