@@ -1,0 +1,2 @@
+libgtk-3-0
+python3-graph-tool
