@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y \
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get install -y \
     python3.13 \
-    python3-pip \
-    python3-graph-tool
+    python3-pip
+    #python3-graph-tool
 
 RUN pip install -r requirements.txt
 
