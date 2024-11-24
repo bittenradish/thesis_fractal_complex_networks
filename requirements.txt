@@ -1,6 +1,0 @@
-notebook==7.1.3
-jupyterlab==4.1.8
-jupyterhub
-pandas==2.2.2
-matplotlib==3.8.0
-seaborn==0.13.2
