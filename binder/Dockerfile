@@ -19,9 +19,13 @@ RUN apt-get update && \
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && apt-get install -y \
     python3.13 \
-    python3-pip \
-    python3-graph-tool && \
-    rm -rf /var/lib/apt/lists/*
+    python3-pip && \
+    rm -rf /var/lib/apt/lists/* && \
+    wget https://downloads.skewed.de/skewed-keyring/skewed-keyring_1.1_all_$(lsb_release -s -c).deb && \
+    dpkg -i skewed-keyring_1.1_all_$(lsb_release -s -c).deb && \
+    echo "deb [signed-by=/usr/share/keyrings/skewed-keyring.gpg] https://downloads.skewed.de/apt $(lsb_release -s -c) main" > \
+    /etc/apt/sources.list.d/skewed.list && \
+    apt-get install python3-graph-tool
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
