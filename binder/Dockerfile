@@ -26,7 +26,8 @@ RUN apt-get update && \
     dpkg -i skewed-keyring_1.1_all_$(lsb_release -s -c).deb && \
     echo "deb [signed-by=/usr/share/keyrings/skewed-keyring.gpg] https://downloads.skewed.de/apt $(lsb_release -s -c) main" > \
     /etc/apt/sources.list.d/skewed.list && \
-    apt-get install python3-graph-tool=2.33
+    apt-get update && apt-get install -y \
+    python3-graph-tool=2.33
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
