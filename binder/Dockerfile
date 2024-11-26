@@ -46,7 +46,7 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
 
-RUN pip install -r requirements.txt
+RUN pip install -r ${HOME}/requirements.txt
 
 
 #CMD [ "jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root" ]
