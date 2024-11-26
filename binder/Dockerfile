@@ -15,6 +15,7 @@ RUN apt-get update && \
     curl \
     gnupg \
     lsb-release \
+    wget \
     software-properties-common && \
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && apt-get install -y \
