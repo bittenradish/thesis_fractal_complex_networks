@@ -1,22 +1,27 @@
 FROM ubuntu:22.04
 
-ARG DEBIAN_FRONTEND=noninteractive
-
-WORKDIR /workdir
-
-COPY . .
+# Set environment variables to non-interactive
+ENV DEBIAN_FRONTEND=noninteractive
 
 LABEL version="1.0"
 
 LABEL description="docker image for Master thesis"
 
-RUN apt-get update && apt-get install -y \
-    software-properties-common
-RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt-get install -y \
+# Update the package list and install required packages
+RUN apt-get update && \
+    apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release \
+    software-properties-common \
     python3.13 \
     python3-pip \
-    python3-graph-tool
+    python3-graph-tool && \
+    rm -rf /var/lib/apt/lists/*
+
+
 
 RUN pip install -r requirements.txt
 
