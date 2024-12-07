@@ -6,4 +6,17 @@ pandas==2.2.2
 matplotlib==3.8.0
 seaborn==0.13.2
 numpy==1.24.4
+beautifulsoup4==4.12.3
+networkx==3.3
+arrow==1.3.0
+pyarrow==16.0.0
+dask==2024.4.2
+dask-expr==1.0.14
+leidenalg==0.10.2
+pysciebo==1.1.0
+scipy==1.14.0
+scikit-learn==1.5.1
+torch==2.3.1
+wordcloud==1.9.3
+regex==2024.5.15
 zstandard==0.23.0
