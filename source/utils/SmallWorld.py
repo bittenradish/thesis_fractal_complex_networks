@@ -15,6 +15,7 @@ class SmallWorldResult:
         self.clustering_coefficient = clustering_coefficient
         self.edge_num = edge_num
         self.vertice_num = vertice_num
+        #Estimated avg shortest path length
         self.l_avg_estimated = l_avg_estimated
         self.l_means_std = l_means_std
 
@@ -33,6 +34,7 @@ class SmallWorldResult:
         except:
             return np.nan
 
+    # Expected avg shortest path length for random graph
     @property
     def l_expected_random(self):
         try:
